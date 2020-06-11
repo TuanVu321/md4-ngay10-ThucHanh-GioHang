@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hien thi Product</title>
+</head>
+<body>
+<a href="/">Quay ve trang chu</a>
+<table>
+    <tr>
+        <td>Ten san pham</td>
+        <td th:text="${product.getName()}"></td>
+    </tr>
+    <tr>
+        <td>Gia san pham</td>
+        <td th:text="${product.getPrice()}"></td>
+    </tr>
+    <tr>
+        <td><input th:type="hidden" th:field="${product.id}"></td>
+        <td><a th:href="@{/addProduct/__${product.id}__}">Them vao gio hang</a></td>
+    </tr>
+
+</table>
+
+</body>
+</html>

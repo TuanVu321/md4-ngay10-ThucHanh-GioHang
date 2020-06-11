@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Danh sach san pham</h1>
+<table>
+    <tr>
+        <td>ten san pham</td>
+        <td>gia san pham</td>
+    </tr>
+    <tr th:each="ls:${listProduct}" >
+        <td><a th:href="@{/showProduct/__${ls.id}__}" th:text="${ls.name}"></a></td>
+        <td th:text="${ls.price}"></td>
+    </tr>
+</table>
+<a href="/showList">Hien thi gio hang</a>
+</body>
+</html>

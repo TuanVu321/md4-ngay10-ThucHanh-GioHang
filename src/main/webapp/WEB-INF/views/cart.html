@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gio hang</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Ten san pham</td>
+        <td>Gia hang</td>
+        <td>So luong</td>
+        <td>Xoa</td>
+    </tr>
+
+    <tr th:each="ls, stat : ${listCart}">
+        <td th:text="*{ls.name}"></td>
+        <td th:text="${ls.getPrice()}"></td>
+        <td>
+            <input type="text" th:field="${listCart[__${stat.index}__].quantity}" name="quantity"/>
+        </td>
+
+        <td>Xoa</td>
+    </tr>
+
+</table>
+</body>
+</html>
